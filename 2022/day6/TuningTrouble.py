@@ -1,4 +1,4 @@
-def exercise_1(path, length):
+def find_distinct_characters(path, length):
     f = open(path, "r")
     counter = 0
     entries = []
@@ -7,7 +7,6 @@ def exercise_1(path, length):
 
     for char in line:
         counter += 1
-
         if char in entries:
             while char != entries.pop(0):
                 pass
@@ -16,11 +15,12 @@ def exercise_1(path, length):
 
         if len(entries) == length:
             return counter
-    return counter
+
+    return -1
 
 
 if __name__ == "__main__":
-    print("Exercise 1:", exercise_1("input", 4))
-    print("Exercise 2:", exercise_1("input", 14))
+    print("Exercise 1:", find_distinct_characters("input", 4))
+    print("Exercise 2:", find_distinct_characters("input", 14))
 
 
